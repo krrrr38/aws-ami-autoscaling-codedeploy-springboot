@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+   - source: /
+     destination: /var/javaapp
+hooks:
+  ApplicationStop:
+    - location: hooks/application_stop.sh
+      timeout: 60
+      runas: ubuntu
+  AfterInstall:
+    - location: hooks/after_install.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: hooks/application_start.sh
+      timeout: 120
+      runas: ubuntu
+  ValidateService:
+    - location: hooks/validate_service.sh
+      timeout: 120
+      runas: ubuntu

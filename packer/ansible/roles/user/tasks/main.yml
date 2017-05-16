@@ -1,0 +1,3 @@
+---
+- name: add www user
+  user: name=www

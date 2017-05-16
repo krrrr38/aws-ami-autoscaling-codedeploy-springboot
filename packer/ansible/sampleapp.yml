@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - role: user
+    - role: java
+    - role: aws-codedeploy-agent
+      ansible_ec2_placement_region: ap-northeast-1
+    - role: aws-user-data

@@ -1,0 +1,6 @@
+---
+- name: Set user-data.sh for AWS instance launching
+  template:
+    src: user-data.sh.j2
+    dest: /ops/user-data.sh
+    mode: 0644
